@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let year = +prompt("Enter your birth year");
+      let currentYear = new Date().getFullYear();
+      let age = currentYear - year;
+
+      const adultAge = 18;
+      if (age >= adultAge) {
+        alert("You are adult");
+      } else {
+        alert("You are not adult");
+      }
+    </script>
+  </body>
+</html>
