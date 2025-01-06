@@ -6,9 +6,27 @@
     <title>Document</title>
   </head>
   <body>
-    <p>Enter measuring type</p>
-    <button>Celsium</button>
-    <button>Farenheit</button>
+    <p>Enter temperature</p>
+    <input type="text" id = "temp"/>
+    <div><button id = "btnToC">to Celsium</button>
+         <button id = "btnToF">to Farenheit</button>
+    </div>
+    <div>
+        <b id = output>
 
+        </b>
+    </div>
+    <script>
+        document.querySelector("#btnToC").onclick = function() {
+            let tempF = +document.querySelector("#temp").value;
+            let tempC = 
+            alert("Your temperature in Celsium is " + tempC )
+        }
+        document.querySelector("#btnToF").onclick = function() {
+            let tempC = +document.querySelector("#temp").value;
+            let tempF = (5/9)* (tempF - 32)(9/5)* tempF + 32
+            alert("Your temperature in Farenheit is " + tempF )
+        }
+    </script>
   </body>
 </html>
