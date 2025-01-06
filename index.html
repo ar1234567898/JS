@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-   <script>
-        const pi = 3.14159265358979323846264338327950288419766939937510;
-        
-        console.log(pi)
-   </script>
-</body>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Введіть перше число: ");
+
+      let b = prompt("Введіть друге число: ");
+
+      let c = prompt("Введіть третє число: ");
+
+      a = Number(a);
+      b = Number(b);
+      c = Number(c);
+      let result = (a + b + c) / 3;
+      console.log("Середнє арифметичне дорівнює " + result.toFixed(2));
+    </script>
+  </body>
 </html>
