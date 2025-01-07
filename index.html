@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let randomNumber = Math.floor(Math.random(1) * 100) + 1;
+      let randomNumber = Math.floor(Math.random(1) * 100) + 1;
+      while(true) {
         let guessNumber = prompt("Enter your number")
-        if (guessNumber == randomNumber) {
-            alert("You guessed right!")
-        }
-        else {
-            if (guessNumber < randomNumber) {
-                alert("Your number is smaller")
-            }
-            else {
-                
-            }
-        }
+      if (guessNumber == randomNumber) {
+          alert("You guessed right!")
+          break;
+      }
+      else {
+          if (guessNumber < randomNumber) {
+              alert("Riddled number is larger")
+          }
+          else {
+              alert("Riddled number is smaller")
+          }
+      }
+      }
     </script>
-</body>
+  </body>
 </html>
