@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let randomNumber = Math.floor(Math.random(1) * 100) + 1;
+      let isGameOver = false;
+      while (!isGameOver) {
+        let guessNumber = +prompt("Enter your number");
+        
+        if (guessNumber == randomNumber) {
+          alert("You guessed right!");
+          isGameOver = true;
+        } else if (guessNumber < randomNumber) {
+          alert("Riddled number is larger");
+        } else {
+          alert("Riddled number is smaller");
+        }
+      }
+    </script>
+  </body>
+</html>
