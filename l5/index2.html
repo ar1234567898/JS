@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Введіть значення для перетворення
+      <input type="text" id="temp" />
+    </p>
+    <div>
+      <button type="button" id="btnToC">ToCelsium</button>
+      <button type="button" id="btnToF">ToFarenheit</button>
+    </div>
+    <div>
+      <b id="output"></b>
+    </div>
+    <script>
+      function toCelsium(tempF) {
+        let tempF = Number(document.querySelector("#temp").value);
+        let tempC = (5 / 9) * (tempF - 32);
+        return tempC;
+      }
+
+      function toFarenheit(tempC) {
+        let tempC = Number(document.querySelector("#temp").value);
+        let tempF = (5 / 9) * (tempC - 32);
+        return tempF;
+      }
+
+      document.querySelector("#btnToC").onclick = toCelsium() 
+
+      document.querySelector("#btnToF").onclick = toFarenheit() 
+
+      function showResult(result) {
+        let output = document.querySelector("#output");
+        output.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
