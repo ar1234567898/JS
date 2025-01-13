@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let BMI = (height, weight) => weight / (Math.pow(height, 2) / 10000);
+      function group(BMI) {
+        if (BMI < 18.5) {
+          return 'Not enough weight';
+        }
+        if (18.5 <= BMI <= 24.9) {
+          return 'Normal weight';
+        }
+        if (25 <= BMI <= 29.9) {
+          return 'Overweight';
+        }
+        if (30 <= BMI) {
+          return 'fattiness';
+        }
+      }
+
+      let height = prompt("Enter height ");
+      let weight = prompt("Enter weight ");
+
+      let BMIndex = +BMI(height, weight)
+      let BMIgroup = group(BMIndex)
+
+      alert(`Your BMI is ${BMIndex.toFixed(1)}, your category is ${BMIgroup}`) 
+    </script>
+  </body>
+</html>
