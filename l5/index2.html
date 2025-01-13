@@ -18,26 +18,24 @@
       <b id="output"></b>
     </div>
     <script>
-      function toCelsium(tempF) {
-        let tempF = Number(document.querySelector("#temp").value);
-        let tempC = (5 / 9) * (tempF - 32);
-        return tempC;
-      }
-
-      function toFarenheit(tempC) {
-        let tempC = Number(document.querySelector("#temp").value);
-        let tempF = (5 / 9) * (tempC - 32);
-        return tempF;
-      }
-
-      document.querySelector("#btnToC").onclick = toCelsium() 
-
-      document.querySelector("#btnToF").onclick = toFarenheit() 
-
+      let getValue = () => Number(document.querySelector("#temp").value);
+      let toCelsium = (temp) => (5 / 9) * (temp - 32);
+      let toFarenheit = (temp) => (9 / 5) * temp + 32;
+      let convert = (converter) => {
+        return () => {
+          let temp = getValue();
+          let value = converter(temp);
+          showResult(value);
+        }
+      } 
+      
       function showResult(result) {
         let output = document.querySelector("#output");
         output.innerHTML = result;
       }
+
+      document.querySelector("#btnToC").onclick = convert(toCelsium);
+      document.querySelector("#btnToF").onclick = convert(toFarenheit);
     </script>
   </body>
 </html>
