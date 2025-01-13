@@ -6,6 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        let throwCount = +prompt("How many times do you want to throw a dice?")
+        let random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+        for (let i = 0; i < throwCount; i++) {
+            const result = random(1, 6);
+            console.log(result);
+        }
+
+
+    </script>
 </body>
 </html>
