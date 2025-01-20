@@ -6,11 +6,27 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Choose your figure</h1>
+    <div>
+        <button id="circle">
+            Circle
+        </button>
+    </div>
+    <div>
+        <button id="rectangle">
+            Rectangle
+        </button>
+    </div>
+    <div>
+        <button id="triangle">
+            Triangle
+        </button>
+    </div>
     <script src="../common/my-library.js">
 
     </script>
     <script>
-        let p = (side1, side2, side3) => ((side1 + side2 + side3) / 3);
+        let p = (side1, side2, side3) => ((side1 + side2 + side3) / 2);
         let circleArea = (radius) => Math.PI * Math.pow(radius, 2);
         let circleLenght = (radius) => 2 * Math.PI * radius;
         let rectangleArea = (side1, side2) => side1 * side2;
@@ -18,7 +34,16 @@
         let triangleArea = (side1, side2, side3) => Math.sqrt(p(side1, side2, side3) * (p(side1, side2, side3) - side1) * (p(side1, side2, side3) - side2) * (p(side1, side2, side3) - side3));
         let trianglePerimeter = (side1, side2, side3) => side1 + side2 + side3;
 
-        let figureName = prompt('Enter figure name')
+        document.querySelector("#circle").onclick = function () {
+            let figureName = circle;
+        }
+        document.querySelector("#rectangle").onclick = function () {
+            let figureName = rectangle;
+        }
+        document.querySelector("#triangle").onclick = function () {
+            let figureName = triangle;
+        }
+                
         if (figureName == 'circle') {
             let radius = +prompt("Enter radius ");
             let prRadius = getNumericValue(radius);
