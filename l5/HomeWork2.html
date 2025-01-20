@@ -6,10 +6,39 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="../common/my-library.js">
+
+    </script>
     <script>
+        let p = (side1, side2, side3) => ((side1 + side2 + side3) / 3);
         let circleArea = (radius) => Math.PI * Math.pow(radius, 2);
         let circleLenght = (radius) => 2 * Math.PI * radius;
         let rectangleArea = (side1, side2) => side1 * side2;
+        let rectanglePerimeter = (side1, side2) => 2 * (side1 + side2);
+        let triangleArea = (side1, side2, side3) => Math.sqrt(p(side1, side2, side3) * (p(side1, side2, side3) - side1) * (p(side1, side2, side3) - side2) * (p(side1, side2, side3) - side3));
+        let trianglePerimeter = (side1, side2, side3) => side1 + side2 + side3;
+
+        let figureName = prompt('Enter figure name')
+        if (figureName == 'circle') {
+            let radius = +prompt("Enter radius ");
+            let prRadius = getNumericValue(radius);
+            alert(`The area of circle is ${circleArea(radius).toFixed(2)}, the lenght of circle is ${circleLenght(radius).toFixed(2)}`);
+        }
+        if (figureName == 'rectangle') {
+            let side1 = +prompt("Enter first side ");
+            let side2 = +prompt("Enter second side ");
+            alert(`The area of rectangle is ${rectangleArea(side1, side2).toFixed(2)}, the perimeter of rectangle is ${rectanglePerimeter(side1, side2).toFixed(2)}`);
+        }
+        if (figureName == 'triangle') {
+            let side1 = +prompt("Enter first side ");
+            let side2 = +prompt("Enter second side ")
+            let side3 = +prompt("Enter third side ")
+            alert(`The area of triangle is ${triangleArea(side1, side2, side3).toFixed(2)}, the perimeter of triangle is ${trianglePerimeter(side1, side2, side3).toFixed(2)}`);
+        }
+        else {
+            alert('inapropriate name')
+        }
+
     </script>
 </body>
 </html>
