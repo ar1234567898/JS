@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let randomNumber = Math.floor(Math.random(1) * 100) + 1;
+      let attempts = [];
+      let index = 0
+
+      let isGameOver = false;
+      while (!isGameOver) {
+        let guessNumber = +prompt("Enter your number");
+        attempts.push(guessNumber);
+
+        if (guessNumber == randomNumber) {
+          alert("You guessed right!");
+          isGameOver = true;
+        } else if (guessNumber < randomNumber) {
+          alert("Riddled number is larger");
+        } else {
+          alert("Riddled number is smaller");
+        }
+        
+      }
+      console.log("You did " + attempts.length + " attempts");
+      attempts.forEach((x) => console.log(x));
+        
+    </script>
+  </body>
+</html>
