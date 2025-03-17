@@ -8,13 +8,39 @@
 <body>
     <script>
         function check(array) {
+            let mark = null
             for (i in array) {
-                
+                mark = mark + array[i] 
             }
+            return Math.round(mark/array.length, 2)
+        }
+
+        function min(array) {
+            let min = array[0]
+            for (i in array) {
+                if (array[i] < min) {
+                    min = array[i]
+                }
+            }
+            return min
+        }
+
+        function max(array) {
+            let max = array[0]
+            for (i in array) {
+                if (array[i] > max) {
+                    max = array[i]
+                }
+            }
+            return max
         }
         
-        list = [] // Marks list
+        marks = [100, 45, 78, 54, 23, 2, 98, 34, 27, 87, 70, 65, 13, 63, 86, 90, 97] // Marks list
 
+        let newMark = parseInt(prompt("Enter new mark: "))
+        marks.push(newMark)
+
+        alert("Average: " + check(marks) + "\n" + "Min: " + min(marks) + "\n" + "Max: " + max(marks))
 
     </script>
 </body>
