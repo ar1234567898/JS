@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class resume {
+            constructor(name, surname, age, id, avgMark) {
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.id = id;
+                this.avgMark = avgMark;
+            }
+        }
+
+        let studentsList = {
+
+            students: [],
+
+            add(name, surname, age, id, avgMark) {
+                let student = new resume(name, surname, age, id, avgMark);
+                this.students.push(student);
+            },
+
+            remove(id) {
+                this.students = this.students.filter(student => student.id !== id);
+            },
+
+            display() {
+                this.students.forEach(student => {
+                    console.log(`Name: ${student.name}, Surname: ${student.surname}, Age: ${student.age}, ID: ${student.id}, AvgMark: ${student.avgMark}`);
+                });
+            },
+
+        }
+
+        studentsList.add("Ivan", "Ivanov", 20, 1, 4.5);
+        studentsList.add("Petro", "Petrov", 21, 2, 4.0);
+
+        studentsList.display();
+
+    </script>
+</body>
+</html>
