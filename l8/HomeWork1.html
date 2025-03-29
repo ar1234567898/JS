@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="booksList"></div>
+
+    <script>
+      let books = [
+        {
+          title: "1984",
+          author: "Джордж Орвелл",
+          year: 1949,
+          genre: "Антиутопія",
+        },
+        {
+          title: "Гаррі Поттер і філософський камінь",
+          author: "Дж. К. Роулінг",
+          year: 1997,
+          genre: "Фентезі",
+        },
+        {
+          title: "Гра престолів",
+          author: "Джордж Р. Р. Мартін",
+          year: 1996,
+          genre: "Фентезі",
+        },
+        {
+          title: "Старий і море",
+          author: "Ернест Хемінгуей",
+          year: 1952,
+          genre: "Пригодницький роман",
+        },
+        {
+          title: "Майстер і Маргарита",
+          author: "Михайло Булгаков",
+          year: 1967,
+          genre: "Фантастика",
+        },
+      ];
+
+      booksList = document.getElementById("booksList");
+
+      books.forEach((book) => {
+        let bookDiv = document.createElement("div");
+        bookDiv.innerHTML = `
+            <h2>${book.title}</h2>
+            <p>Автор: ${book.author}</p>
+            <p>Рік: ${book.year}</p>
+            <p>Жанр: ${book.genre}</p>
+            `;
+        booksList.appendChild(bookDiv);
+      });
+
+      function addBook(title, author, year, genre) {
+        books.push({ title, author, year, genre });
+        let bookDiv = document.createElement("div");
+        bookDiv.innerHTML = `
+            <h2>${title}</h2>
+            <p>Автор: ${author}</p>
+            <p>Рік: ${year}</p>
+            <p>Жанр: ${genre}</p>
+            `;
+        booksList.appendChild(bookDiv);
+      }
+
+      function removeBook(title) {
+        books = books.filter((book) => book.title !== title);
+        booksList.innerHTML = "";
+        books.forEach((book) => {
+          let bookDiv = document.createElement("div");
+          bookDiv.innerHTML = `
+            <h2>${book.title}</h2>
+            <p>Автор: ${book.author}</p>
+            <p>Рік: ${book.year}</p>
+            <p>Жанр: ${book.genre}</p>
+            `;
+          booksList.appendChild(bookDiv);
+        });
+      }
+
+      function editBook(title, author, year, genre) {
+        books = books.map((book) => {
+          if (book.title === title) {
+            book.author = author;
+            book.year = year;
+            book.genre = genre;
+          }
+          return book;
+        });
+        booksList.innerHTML = "";
+        books.forEach((book) => {
+          let bookDiv = document.createElement("div");
+          bookDiv.innerHTML = `
+            <h2>${book.title}</h2>
+            <p>Автор: ${book.author}</p>
+            <p>Рік: ${book.year}</p>
+            <p>Жанр: ${book.genre}</p>
+            `;
+          booksList.appendChild(bookDiv);
+        });
+      }
+    </script>
+  </body>
+</html>
